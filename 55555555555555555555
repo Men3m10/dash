@@ -1,0 +1,109 @@
+// import { useState, useEffect } from "react";
+
+// import MDBox from "components/MDBox";
+// import MDTypography from "components/MDTypography";
+// import axios from "axios";
+// import * as React from "react";
+
+// export default function useclinicData() {
+//   const [clinicData, setClinicData] = useState([]);
+
+//   useEffect(() => {
+//     async function fetchclinicData() {
+//       try {
+//         const response = await axios.get(
+//           "https://nutrigym.onrender.com/api/v1/clinc"
+//         );
+
+//         setClinicData(response.data.data);
+//       } catch (error) {
+//         console.error("Error fetching clinic data:", error);
+//       }
+//     }
+
+//     fetchclinicData();
+//   }, []);
+
+
+//   const DeleteClub = async (clubID) => {
+//     try {
+//       const token = localStorage.getItem("token");
+//       const headers = {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${token}`,
+//       };
+//       const response = await axios.delete(
+//         `https://nutrigym.onrender.com/api/v1/club/` + clubID,
+//         {
+//           headers: headers,
+//         }
+//       );
+//       fetchClubData();
+//     } catch (error) {
+//       console.error("Error fetching club data:", error);
+//     }
+//   };
+
+
+
+
+//   const Author = ({ name }) => (
+//     <MDBox display="flex" alignItems="center" lineHeight={1}>
+//       <MDBox ml={0} lineHeight={0}>
+//         <MDTypography display="block" variant="button" fontWeight="medium">
+//           {name}
+//         </MDTypography>
+//       </MDBox>
+//     </MDBox>
+//   );
+
+//   const Governorate = ({ title }) => (
+//     <MDBox lineHeight={1} textAlign="left">
+//       <MDTypography
+//         display="block"
+//         variant="caption"
+//         color="text"
+//         fontWeight="medium"
+//       >
+//         {title}
+//       </MDTypography>
+//     </MDBox>
+//   );
+
+//   const columns = [
+//     { Header: "Clinic", accessor: "clinic", width: "25%", align: "left" },
+//     { Header: "Governorate", accessor: "governorate", align: "left" },
+//     { Header: "Street", accessor: "street", align: "center" },
+//     { Header: "Action", accessor: "action", align: "center" },
+//     { Header: "Services", accessor: "services", align: "center" },
+//     { Header: "Add Service", accessor: "Addservice", align: "center" },
+//     { Header: "Delete", accessor: "delete", align: "center" },
+//   ];
+
+//   const rows = clinicData.map((clinic) => ({
+//     clinic: <Author name={clinic.name} />,
+//     governorate: <Governorate title={clinic.location.governorate} />,
+//     street: clinic.location.street,
+//     action: (
+//       <MDTypography
+//         component="a"
+//         href="#"
+//         variant="caption"
+//         color="text"
+//         fontWeight="medium"
+//       >
+//         Edit
+//       </MDTypography>
+//     ),
+//     offers: <Getoffers clubId={club._id} />,
+//     Addoffer: <Action2 clubId={club._id} />,
+//     delete: <Delete clubId={club._id} />,
+//   }));
+
+//   return {
+//     columns,
+//     rows,
+//   };
+// }
+// /////////////////////////////////////////////////////////////////
+
